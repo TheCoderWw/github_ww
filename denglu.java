@@ -1,7 +1,10 @@
-import java.util.*;
+import java.util.Scanner;
 
+/*
+ * 登录code,有3次机会
+ */
 public class denglu {
-	public static void main(String[] args) {
+	public static void main(String[] args) {// 少时诵诗书
 		Scanner in = new Scanner(System.in);
 		String name = "327739288";
 		String password = "ww327739288";
