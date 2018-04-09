@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /*
- * Çó³ö10¸ö1-20ÄÚµÄ²»ÖØ¸´Êı×Ö*
+ * æ±‚å‡º10ä¸ª1-20å†…çš„ä¸é‡å¤æ•°å­—*
  */
 public class RandomCollection {
 	public static void main(String[] args) {
