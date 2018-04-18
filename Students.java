@@ -1,73 +1,61 @@
-package study17;
+package study21;
 
 public class Students implements Comparable<Students> {
-	private String name = null;
-	private int age = 0;
-
-	public Students() {
-
-	}
-
-	public Students(String name, int age) {
-		this.name = name;
-		this.age = age;
-	}
+	private String name;
+	private int Ch;
+	private int Math;
+	private int Eng;
+	private int All;
 
 	public String getName() {
-		return this.name;
-	}
-
-	public int getAge() {
-		return this.age;
+		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public int getCh() {
+		return Ch;
 	}
 
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+	public void setCh(int ch) {
+		Ch = ch;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + age;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
+	public int getMath() {
+		return Math;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Students other = (Students) obj;
-		if (age != other.age)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
+	public void setMath(int math) {
+		Math = math;
+	}
+
+	public int getEng() {
+		return Eng;
+	}
+
+	public void setEng(int eng) {
+		Eng = eng;
+	}
+
+	public void setAll() {
+		this.All = this.Ch + this.Math + this.Eng;
+	}
+
+	public int getAll() {
+		return All;
 	}
 
 	@Override
 	public int compareTo(Students o) {
-		int tem = this.age - o.age; // tem计算出差值(此差值的正负会体现在自然排序中)
-		String name = this.name;
-		return tem == 0 ? name.compareTo(o.name) : tem; // tem越小越靠前
+		// TODO Auto-generated method stub
+		int tem = this.getAll() - o.getAll();
+		int tem1 = (tem == 0) ? this.getCh() - o.getCh() : tem;
+		int tem2 = (tem1 == 0) ? this.getMath() - o.getMath() : tem1;
+		int tem3 = (tem2 == 0) ? this.getEng() - o.getEng() : tem2;
+		int tem4 = (tem3 == 0) ? this.getName().compareTo(o.getName()) : tem3;
+		return -tem4;
 	}
 
 }
